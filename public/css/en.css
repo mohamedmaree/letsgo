@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'OpenSans-Light-webfont';
+    src: url('../fonts/OpenSans-Light-webfont.eot'), 
+    url('../fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'), 
+    url('../fonts/OpenSans-Light-webfont.woff') format('woff'), 
+    url('../fonts/OpenSans-Light-webfont.ttf') format('truetype'), 
+    url('../fonts/OpenSans-Light-webfont.svg#DINNextLTArabic-Light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*************************************************************************************/
+
+body {
+    direction: ltr;
+    text-align: left;
+    font-family: 'OpenSans-Light-webfont';
+}

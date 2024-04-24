@@ -1,0 +1,373 @@
+@font-face {
+    font-family: 'JF-Flat-regular';
+    src: url('../fonts/JF-Flat-regular.eot'), url('../fonts/JF-Flat-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/JF-Flat-regular.woff') format('woff'), url('../fonts/JF-Flat-regular.ttf') format('truetype'), url('../fonts/JF-Flat-regular.svg#JF-Flat-regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*************************************************************************************/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+     overflow-y: hidden; 
+    font-family: 'JF-Flat-regular';
+    direction: rtl;
+    text-align: right;
+    position: relative;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: right;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1,
+.col-xs-2, .col-sm-2, .col-md-2, .col-lg-2,
+.col-xs-3, .col-sm-3, .col-md-3, .col-lg-3,
+.col-xs-4, .col-sm-4, .col-md-4, .col-lg-4,
+.col-xs-5, .col-sm-5, .col-md-5, .col-lg-5,
+.col-xs-6, .col-sm-6, .col-md-6, .col-lg-6,
+.col-xs-7, .col-sm-7, .col-md-7, .col-lg-7,
+.col-xs-8, .col-sm-8, .col-md-8, .col-lg-8,
+.col-xs-9, .col-sm-9, .col-md-9, .col-lg-9,
+.col-xs-10, .col-sm-10, .col-md-10, .col-lg-10,
+.col-xs-11, .col-sm-11, .col-md-11, .col-lg-11 {
+   float: right !important;
+}
+
+.clear {
+    clear: both;
+}
+
+a,
+a:hover,
+a:focus {
+    color: #458fcd;
+    text-decoration: none;
+    outline: 0;
+}
+
+img{
+    max-width: 60%;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.red {
+    color: #fd2e2e;
+}
+
+section {
+    overflow: hidden;
+}
+
+/* Start Header */
+
+header {
+    padding: 25px;
+    background-color: #8e8e8e7d;
+}
+
+header .logo {
+    width: 300px;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+header .logo img {
+    border-radius: 5px;
+}
+
+/* End Header */
+
+/* Start Content */
+
+.content-login {
+    position: relative;
+    /*background-image: url(../img/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;*/
+    /*background-color: #513b8a;*/
+    color: #fff;
+    min-height: 100vh;
+    padding: 40px 0;
+}
+
+.content-login:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #8e8e8e7d;
+}
+
+h3 {
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.label-control {
+    display: block;
+}
+
+.btn-group-vertical>.btn.active, 
+.btn-group-vertical>.btn:active, 
+.btn-group-vertical>.btn:focus, 
+.btn-group-vertical>.btn:hover, 
+.btn-group>.btn.active, 
+.btn-group>.btn:active, 
+.btn-group>.btn:focus, 
+.btn-group>.btn:hover {
+    background-color: #fff;
+}
+
+.dropup .dropdown-menu, 
+.navbar-fixed-bottom .dropdown .dropdown-menu {
+    top: 100%;
+    bottom: auto;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  -moz-appearance:none;
+  margin: 0; 
+}
+
+.form {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 5px;
+    color: #000;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.form label {
+    display: block;
+    font-weight: normal;
+    color: #000;
+}
+
+.form .form-control {
+    border-radius: 30px;
+}
+
+.form .form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #513b8a;
+}
+
+.form .btn-send {
+    background-color: #2bb673;
+    color: #fff;
+    box-shadow: 0 0 0;
+    width: 200px;
+    max-width: 200px;
+    display: block;
+    border-radius: 30px;
+    margin: auto;
+    height: 40px;
+    transition: all 0.3s ease-in-out;
+}
+
+.form .btn-send:hover {
+    color: #2bb673;
+    background-color: #fff;
+    border: 1px solid #2bb673;
+}
+
+/* End Content */
+
+/* Start Code */
+
+.entire-data {
+    margin-bottom: 40px;
+}
+
+.entire-data a {
+    margin-right: 10px;
+    color: #34c734;
+}
+
+.countdown {
+    position: relative;
+    top: 32px;
+    font-size: 16px;
+    color: #04d1d6;
+}
+
+/* End Code */
+
+/* Start SignUp */
+
+.sign .form-control {
+    max-width: 500px;
+}
+
+.sign .form .upload {
+    overflow: hidden;
+    display: inline-block;
+}
+
+.sign .form .upload-img {
+    width: 150px;
+    height: 150px;
+    font-size: 45px;
+    border: 2px dashed #d0d0d0;
+    color: #102c35;
+    padding: 40px;
+    cursor: pointer;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+.sign .form input[type="file"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.sign .form .icofont-plus {
+    color: #d7cfcf !important;
+    position: relative !important;
+    font-size: 45px !important;
+    bottom: 0 !important;
+}
+
+.images-upload-block {
+    position: relative;
+    margin: 0 0 0 90px;
+}
+
+.sign .form .images-upload-block .prof {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.sign .form .uploaded-block {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    z-index: 99;
+}
+
+    .sign .form .uploaded-block img {
+        width: 150px;
+        height: 150px;
+        z-index: 9;
+    }
+
+    .sign .form .uploaded-block .close {
+        position: absolute;
+        right: 5px;
+    }
+
+    .checkbox label {
+        padding-right: 20px;
+    }
+
+    .checkbox input[type=checkbox], 
+    .checkbox-inline input[type=checkbox] {
+        right: 0;
+    }
+
+    .orders ul li {
+        line-height: 2;
+    }
+
+/* End SignUp */
+
+
+/* Start Media Query */
+
+@media(max-width:480px) {
+
+    header .logo {
+        display: block;
+        margin: auto;
+    }
+
+    .form .btn-send {
+        width: 100%;
+        margin: 0;
+    }
+
+    .countdown {
+        top: -10px;
+        text-align: center;
+        display: block;
+    }
+
+}
+
+/*Smat Phone And Tablet*/
+
+@media(min-width: 481px) and (max-width:767px) {
+
+    header .logo {
+        display: block;
+        margin: auto;
+    }
+
+    .form .btn-send {
+        width: 100%;
+        margin: 0;
+    }
+
+    .countdown {
+        top: -10px;
+        text-align: center;
+        display: block;
+    }
+
+}
+/*Small Screen*/
+
+@media(min-width:768px) and (max-width:991px) {
+
+    
+    
+}
+/*Medium Screen*/
+
+@media(min-width:992px)and (max-width:1199px) {
+    
+    
+    
+}
+/*Larger Screen*/
+
+
+/* End Media Query */

@@ -1,0 +1,80 @@
+@import '../node_modules/font-awesome/css/font-awesome.min';
+/*CSS ALL*/
+.checkbox,
+.radio {
+	display: inline-block;
+	margin-bottom: 15px;
+	&:hover {
+		cursor: pointer;
+	}
+    .fa {
+        width: 1em;
+    }
+}
+// checkbox indent & radio indent
+.indent {
+    padding-left: 30px;
+    .fa {
+        margin-left: -30px;
+    }
+}
+
+
+.checkbox input[type="checkbox"],
+.radio input[type="radio"] {
+	display: none;
+	& + i:before {
+		content: "\f096";
+		position: relative;
+		bottom: -4px;
+		margin-right: 5px;
+		color: #999;
+	}
+}
+
+.checkbox:hover input[type="checkbox"],
+.radio:hover input[type="radio"] {
+	& + i:before {
+		color: green;
+	}
+}
+
+.checkbox input[type="checkbox"],
+.radio input[type="radio"] {
+	&:checked + i:before {
+		content: "\f046";
+		color: green;
+	}
+    &:disabled + i:before,
+	&:disabled:checked + i:before {
+		color: #ddd;
+	}
+}
+
+/*RADIO*/
+.radio input[type="radio"] {
+	&  + i:before {
+		content: "\f1db";
+	}
+	&:checked + i:before {
+		content: "\f058";
+	}
+}
+
+/* CHECKBOX&RADIO XS*/
+.checkbox-xs input[type="checkbox"],
+.radio-xs input[type="radio"] {
+    & + i:before {
+        bottom: 0;
+    }
+}
+// checkbox indent & radio indent
+.checkbox-xs,
+.radio-xs {
+    &.indent {
+        padding-left: 20px;
+        .fa {
+            margin-left: -20px;
+        }
+    }
+}

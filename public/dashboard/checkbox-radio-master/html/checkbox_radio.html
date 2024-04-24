@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <title>Checkbox Radio | Tuds</title>
+		@@include('./html-global/head.html')
+		<link rel="stylesheet" href="css/checkbox_radio.css">
+	</head>
+	<body>
+        <header>
+            <h1>Checkbox & Radio custom style CSS</h1>
+        </header>
+        <div class="group-social">
+            <a href="https://github.com/crazychicken/checkbox-radio" class="btn">Github</a>
+            <a href="https://twitter.com/mtu_truong" class="btn">Twitter</a>
+        </div>
+		<div class="container">
+            <h3>Checkbox</h3>
+            <label class="checkbox checkbox-indent">
+                <input type="checkbox">
+                <i class="icon-checkbox"></i>
+                Default
+            </label>
+            <br>
+            <label class="checkbox">
+                <input type="checkbox" checked>
+                <i class="icon-checkbox"></i>
+                Checked
+            </label>
+            <br>
+            <label class="checkbox disabled">
+                <input type="checkbox" disabled>
+                <i class="icon-checkbox"></i>
+                Disabled
+            </label>
+            <br>
+            <label class="checkbox disabled">
+                <input type="checkbox" disabled checked>
+                <i class="icon-checkbox"></i>
+                Disabled & Checked
+            </label>
+            <br>
+            <button class="btn btn-toggle">View source <small>>></small></button>
+<div class="box-well">
+<pre style="margin: 0; line-height: 125%"><span style="color: #bb0066; font-weight: bold">&lt;label</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;checkbox&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;input</span> <span style="color: #336699">type=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;checkbox&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;i</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;icon-checkbox&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;&lt;/i&gt;</span>
+    Default
+<span style="color: #bb0066; font-weight: bold">&lt;/label&gt;</span>
+<span style="color: #bb0066; font-weight: bold">&lt;br&gt;</span>
+<span style="color: #bb0066; font-weight: bold">&lt;label</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;checkbox&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;input</span> <span style="color: #336699">type=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;checkbox&quot;</span> <span style="color: #336699">checked</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;i</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;icon-checkbox&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;&lt;/i&gt;</span>
+    Checked
+<span style="color: #bb0066; font-weight: bold">&lt;/label&gt;</span>
+<span style="color: #bb0066; font-weight: bold">&lt;br&gt;</span>
+<span style="color: #bb0066; font-weight: bold">&lt;label</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;checkbox disabled&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;input</span> <span style="color: #336699">type=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;checkbox&quot;</span> <span style="color: #336699">disabled</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;i</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;icon-checkbox&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;&lt;/i&gt;</span>
+    Disabled
+<span style="color: #bb0066; font-weight: bold">&lt;/label&gt;</span>
+<span style="color: #bb0066; font-weight: bold">&lt;br&gt;</span>
+<span style="color: #bb0066; font-weight: bold">&lt;label</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;checkbox disabled&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;input</span> <span style="color: #336699">type=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;checkbox&quot;</span> <span style="color: #336699">disabled</span> <span style="color: #336699">checked</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;i</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;icon-checkbox&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;&lt;/i&gt;</span>
+    Disabled <span style="color: #a61717; background-color: #e3d2d2">&amp;</span> Checked
+<span style="color: #bb0066; font-weight: bold">&lt;/label&gt;</span>
+</pre>
+</div>
+            <br>
+            <hr>
+            <h3>Radio</h3>
+            <label class="radio">
+                <input type="radio" name="group-radio">
+                <i class="icon-radio"></i>
+                Default
+            </label>
+            <br>
+            <label class="radio">
+                <input type="radio" name="group-radio" checked>
+                <i class="icon-radio"></i>
+                Checked
+            </label>
+            <br>
+            <label class="radio disabled">
+                <input type="radio" disabled>
+                <i class="icon-radio"></i>
+                Disabled
+            </label>
+            <br>
+            <label class="radio disabled">
+                <input type="radio" disabled checked>
+                <i class="icon-radio"></i>
+                Disabled & Checked
+            </label>
+            <br>
+            <button class="btn btn-toggle">View source <small>>></small></button>
+<div class="box-well">
+<pre style="margin: 0; line-height: 125%"><span style="color: #bb0066; font-weight: bold">&lt;label</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;radio&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;input</span> <span style="color: #336699">type=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;radio&quot;</span> <span style="color: #336699">name=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;group-radio&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;i</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;icon-radio&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;&lt;/i&gt;</span>
+    Default
+<span style="color: #bb0066; font-weight: bold">&lt;/label&gt;</span>
+<span style="color: #bb0066; font-weight: bold">&lt;br&gt;</span>
+<span style="color: #bb0066; font-weight: bold">&lt;label</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;radio&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;input</span> <span style="color: #336699">type=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;radio&quot;</span> <span style="color: #336699">name=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;group-radio&quot;</span> <span style="color: #336699">checked</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;i</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;icon-radio&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;&lt;/i&gt;</span>
+    Checked
+<span style="color: #bb0066; font-weight: bold">&lt;/label&gt;</span>
+<span style="color: #bb0066; font-weight: bold">&lt;br&gt;</span>
+<span style="color: #bb0066; font-weight: bold">&lt;label</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;radio disabled&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;input</span> <span style="color: #336699">type=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;radio&quot;</span> <span style="color: #336699">disabled</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;i</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;icon-radio&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;&lt;/i&gt;</span>
+    Disabled
+<span style="color: #bb0066; font-weight: bold">&lt;/label&gt;</span>
+<span style="color: #bb0066; font-weight: bold">&lt;br&gt;</span>
+<span style="color: #bb0066; font-weight: bold">&lt;label</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;radio disabled&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;input</span> <span style="color: #336699">type=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;radio&quot;</span> <span style="color: #336699">disabled</span> <span style="color: #336699">checked</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;i</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;icon-radio&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;&lt;/i&gt;</span>
+    Disabled <span style="color: #a61717; background-color: #e3d2d2">&amp;</span> Checked
+<span style="color: #bb0066; font-weight: bold">&lt;/label&gt;</span>
+</pre>
+</div>
+            <br>
+            <hr>
+            <!-- Checkbox&Radio Xs -->
+            <h3>Checkbox xs</h3>
+            <label class="checkbox checkbox-xs">
+                <input type="checkbox">
+                <i class="icon-checkbox"></i>
+                Default
+            </label>
+            <br>
+            <label class="checkbox checkbox-xs">
+                <input type="checkbox" checked>
+                <i class="icon-checkbox"></i>
+                Checked
+            </label>
+            <br>
+            <label class="checkbox checkbox-xs disabled">
+                <input type="checkbox" disabled>
+                <i class="icon-checkbox"></i>
+                Disabled
+            </label>
+            <br>
+            <label class="checkbox checkbox-xs disabled">
+                <input type="checkbox" disabled checked>
+                <i class="icon-checkbox"></i>
+                Disabled & Checked
+            </label>
+<div class="box-well show">
+<pre style="margin: 0; line-height: 125%"><span style="color: #bb0066; font-weight: bold">&lt;label</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;checkbox checkbox-xs&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;input</span> <span style="color: #336699">type=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;checkbox&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;i</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;icon-checkbox&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;&lt;/i&gt;</span>
+    Default
+<span style="color: #bb0066; font-weight: bold">&lt;/label&gt;</span>
+</pre>
+</div>
+
+            <br>
+            <hr>
+            <h3>Radio xs</h3>
+            <label class="radio radio-xs indent">
+                <input type="radio" name="group-radio-xs">
+                <i class="icon-radio"></i>
+                Default Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur distinctio eum ipsum soluta dignissimos minima maxime sapiente cupiditate pariatur exercitationem, excepturi alias dolore veritatis in eligendi consectetur voluptates, enim unde!
+            </label>
+            <br>
+            <label class="radio radio-xs indent">
+                <input type="radio" name="group-radio-xs" checked>
+                <i class="icon-radio"></i>
+                Checked Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores tempora totam, perferendis aut assumenda maxime sequi maiores voluptatum similique a reprehenderit accusantium aperiam recusandae accusamus provident laborum quisquam blanditiis itaque?
+            </label>
+            <br>
+            <label class="radio radio-xs disabled">
+                <input type="radio" disabled>
+                <i class="icon-radio"></i>
+                Disabled
+            </label>
+            <br>
+            <label class="radio radio-xs disabled">
+                <input type="radio" disabled checked>
+                <i class="icon-radio"></i>
+                Disabled & Checked
+            </label>
+            <br>
+<div class="box-well show">
+<pre style="margin: 0; line-height: 125%"><span style="color: #bb0066; font-weight: bold">&lt;label</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;radio radio-xs&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;input</span> <span style="color: #336699">type=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;radio&quot;</span> <span style="color: #336699">name=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;group-radio&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;i</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;icon-radio&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;&lt;/i&gt;</span>
+    Default
+<span style="color: #bb0066; font-weight: bold">&lt;/label&gt;</span>
+</pre>
+</div>
+            <!-- End Checkbox&Radio Xs -->
+            <br>
+            <hr>
+            <h3>Checkbox - Radio indent</h3>
+            <label class="checkbox indent">
+                <input type="checkbox" name="group-checkbox-indent">
+                <i class="icon-checkbox"></i>
+                Checked Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur minima suscipit, veritatis. Veniam odit cum repudiandae. Ad, aliquid culpa praesentium sed voluptatem, placeat sapiente, quas sit, dolorem magni saepe quasi.
+            </label>
+            <label class="radio indent">
+                <input type="radio" name="group-radio-indent">
+                <i class="icon-radio"></i>
+                Checked Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur minima suscipit, veritatis. Veniam odit cum repudiandae. Ad, aliquid culpa praesentium sed voluptatem, placeat sapiente, quas sit, dolorem magni saepe quasi.
+            </label>
+            <br>
+<div class="box-well show">
+<pre style="margin: 0; line-height: 125%"><span style="color: #bb0066; font-weight: bold">&lt;label</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;radio indent&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;input</span> <span style="color: #336699">type=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;radio&quot;</span> <span style="color: #336699">name=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;group-radio&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;i</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;icon-radio&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;&lt;/i&gt;</span>
+    Default
+<span style="color: #bb0066; font-weight: bold">&lt;/label&gt;</span>
+</pre>
+</div>
+
+            <br>
+            <hr>
+            <h3>Checkbox-xs - Radio-xs indent</h3>
+            <label class="checkbox checkbox-xs indent">
+                <input type="checkbox" name="group-checkbox-indent">
+                <i class="icon-checkbox"></i>
+                Checked Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur minima suscipit, veritatis. Veniam odit cum repudiandae. Ad, aliquid culpa praesentium sed voluptatem, placeat sapiente, quas sit, dolorem magni saepe quasi.
+            </label>
+            <label class="radio radio-xs indent">
+                <input type="radio" name="group-radio-indent-xs">
+                <i class="icon-radio"></i>
+                Checked Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur minima suscipit, veritatis. Veniam odit cum repudiandae. Ad, aliquid culpa praesentium sed voluptatem, placeat sapiente, quas sit, dolorem magni saepe quasi.
+            </label>
+            <br>
+<div class="box-well show">
+<pre style="margin: 0; line-height: 125%"><span style="color: #bb0066; font-weight: bold">&lt;label</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;radio radio-xs indent&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;input</span> <span style="color: #336699">type=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;radio&quot;</span> <span style="color: #336699">name=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;group-radio&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;</span>
+    <span style="color: #bb0066; font-weight: bold">&lt;i</span> <span style="color: #336699">class=</span><span style="color: #dd2200; background-color: #fff0f0">&quot;icon-radio&quot;</span><span style="color: #bb0066; font-weight: bold">&gt;&lt;/i&gt;</span>
+    Default
+<span style="color: #bb0066; font-weight: bold">&lt;/label&gt;</span>
+</pre>
+</div>
+        </div>
+
+        @@include('./html-global/footer.html')
+	</body>
+</html>
