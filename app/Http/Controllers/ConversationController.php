@@ -157,7 +157,7 @@ class ConversationController extends Controller{
 
     public function uploadFile(Request $request){
         $validator    = Validator::make($request->all(),[
-            // 'image'    => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            // 'image'    => 'required',
             'image'    => 'required',
         ]);
         if($validator->passes()){

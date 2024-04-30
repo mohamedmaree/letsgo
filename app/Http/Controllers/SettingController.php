@@ -66,7 +66,7 @@ class SettingController extends Controller{
         $this->validate($request,[
             'site_name' =>'required|min:1|max:190',
             'site_link' =>'required|min:5|max:190',
-            'add_logo'  =>'required|image|mimes:jpeg,png,jpg,gif,svg'
+            'add_logo'  =>'required'
         ]);
 
         $social = new Social;
@@ -92,7 +92,7 @@ class SettingController extends Controller{
         $this->validate($request,[
             'edit_site_name' =>'required|min:1|max:190',
             'edit_site_link' =>'required|min:5|max:190',
-            'edit_logo' =>'nullable|image|mimes:jpeg,png,jpg,gif,svg'
+            'edit_logo' =>'nullable'
         ]);
 
         $social = Social::findOrFail($request->id);
@@ -127,7 +127,7 @@ class SettingController extends Controller{
         $this->validate($request,[
             'ad_end_at' =>'required|date|after:'.date('Y-m-d'),
             'ad_link'   =>'nullable',
-            'ad_image'  =>'required',//|image|mimes:jpeg,png,jpg,gif,svg'
+            'ad_image'  =>'required'
         ]);
         $ad = new Ads();
         $ad->end_at  = $request->ad_end_at;
@@ -151,7 +151,7 @@ class SettingController extends Controller{
         $this->validate($request,[
             'edit_end_at'    =>'required|date|after:'.date('Y-m-d'),
             'edit_ad_link'   =>'nullable',
-            'edit_ad_image'  =>'nullable',//|image|mimes:jpeg,png,jpg,gif,svg'
+            'edit_ad_image'  =>'nullable',
         ]);        
         $ad = Ads::findOrFail($request->ad_id);
         $ad->end_at  = $request->edit_end_at;
@@ -572,7 +572,7 @@ class SettingController extends Controller{
             'distance'         =>'nullable',
             'site_currency_ar' =>'nullable|min:2|max:190',
             'site_currency_en' =>'nullable|min:2|max:190',
-            'logo'             =>'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'logo'             =>'nullable',
         ]);
 
         $SiteSetting = Setting::where('set_key','=','site_title')->first();

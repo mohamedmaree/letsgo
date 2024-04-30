@@ -266,6 +266,7 @@ class CaptainOrderController extends Controller{
             //check num of orders from that client today .. if >= 3 give block for the captain    
             if(Order::where('captain_id','=',$user->id)->where('user_id','=',$order->user_id)->where('status','=','finished')->where('created_at','like','%'.date('Y-m-d').'%')->count() >= 2){
               $user->active = 'block';
+              $user->block_type = 'auto';
               $user->save();
               $msg = trans('order.fake_trips');
               return response()->json(failReturnData(['reason' => 'fake_trips'],$msg)); 

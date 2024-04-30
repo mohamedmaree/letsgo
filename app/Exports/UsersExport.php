@@ -17,7 +17,7 @@ class UsersExport implements FromCollection
     public function collection(){ 
             if($this->type == 'allusers'){
                 $users = User::with('Role')->latest()->get();
-                $data[] = ['الاسم ','الهاتف','الصلاحية','الحالة ','النوع ',' الرصيد','الطلبات ','تاريخ الاضافة '];
+                $data[] = ['الاسم ','الهاتف','البريد الالكتروني ','الصلاحية','الحالة ','النوع ',' الرصيد','الطلبات ','تاريخ الاضافة '];
                 $status = ''; $num_orders = 0;
                 foreach($users as $user){
                     if($user->active == 'active'){
@@ -35,6 +35,7 @@ class UsersExport implements FromCollection
 
                   $data[] = ['الاسم'          => $user->name,
                              'الهاتف'         => '0'.$user->phone,
+                             'البريد الالكتروني' => $user->email,
                              'الصلاحية'       => ($user->Role)? $user->Role->role:'',
                              'الحالة '         => $status, 
                              'النوع'          => ($user->captain=='true')?'كابتن':'عميل', 
@@ -45,7 +46,7 @@ class UsersExport implements FromCollection
                 }
             }elseif($this->type == 'clients'){
                 $users = User::with('Role')->where('role','=','0')->where('captain','=','false')->latest()->get();
-                $data[] = ['الاسم ','الهاتف','الصلاحية','الحالة ','الرصيد','الطلبات ','تاريخ الاضافة '];
+                $data[] = ['الاسم ','الهاتف','البريد الالكتروني ','الصلاحية','الحالة ','الرصيد','الطلبات ','تاريخ الاضافة '];
                 $status = '';
                 foreach($users as $user){
                     if($user->active == 'active'){
@@ -57,6 +58,7 @@ class UsersExport implements FromCollection
                     }
                   $data[] = ['الاسم'          => $user->name,
                              'الهاتف'         => '0'.$user->phone,
+                             'البريد الالكتروني' => $user->email,
                              'الصلاحية'       => ($user->Role)? $user->Role->role:'',
                              'الحالة '         => $status, 
                              'الرصيد'         => $user->balance, 
@@ -66,7 +68,7 @@ class UsersExport implements FromCollection
                 }                
             }elseif($this->type == 'providers'){
                 $users = User::with('Role')->where('role','=','0')->where('captain','=','true')->latest()->get();
-                $data[] = ['الكود','الاسم ','الهاتف','الحالة ','الرصيد ','رصيد المدفوعات الالكترونية','الطلبات ','تاريخ الاضافة '];
+                $data[] = ['الكود','الاسم ','الهاتف','البريد الالكتروني ','الحالة ','الرصيد ','رصيد المدفوعات الالكترونية','الطلبات ','تاريخ الاضافة '];
                 $status = '';
                 foreach($users as $user){
                     if($user->active == 'active'){
@@ -79,6 +81,7 @@ class UsersExport implements FromCollection
                   $data[] = ['الكود'              => $user->pin_code,
                              'الاسم'              => $user->name,
                              'الهاتف'             => '0'.$user->phone,
+                             'البريد الالكتروني' => $user->email,
                              'الحالة '             => $status,  
                              'الرصيد'             => $user->balance, 
                              'رصيد المدفوعات الالكترونية'    => number_format($user->balance_electronic_payment,2), 
@@ -88,7 +91,7 @@ class UsersExport implements FromCollection
                 }
             }elseif($this->type == 'supervisiors'){
                 $users = User::with('Role')->where('role','>','0')->latest()->get();
-                $data[] = ['الاسم ','الهاتف','الصلاحية','الحالة ','تاريخ الاضافة '];
+                $data[] = ['الاسم ','الهاتف','البريد الالكتروني ','الصلاحية','الحالة ','تاريخ الاضافة '];
                 $status = ''; $num_orders = 0;
                 foreach($users as $user){
                     if($user->active == 'active'){
@@ -100,6 +103,7 @@ class UsersExport implements FromCollection
                     }
                   $data[] = ['الاسم'          => $user->name,
                              'الهاتف'         => '0'.$user->phone,
+                             'البريد الالكتروني' => $user->email,
                              'الصلاحية'       => ($user->Role)? $user->Role->role:'',
                              'الحالة '        => $status, 
                              'تاريخ الاضافة'  => date('Y-m-d H:i',strtotime($user->created_at))
@@ -107,11 +111,12 @@ class UsersExport implements FromCollection
                 }
             }elseif($this->type == 'reviewers'){
                 $users = User::with('Role')->where('role','>','0')->where('type','reviewer')->latest()->get();
-                $data[] = ['الاسم ','الهاتف','الرصيد','قيمة مراجعة الطلب','عدد طلبات تم مراجعتها','عدد طلبات مقبولة','عدد طلبات مرفوضة','تاريخ الاضافة '];
+                $data[] = ['الاسم ','الهاتف','البريد الالكتروني ','الرصيد','قيمة مراجعة الطلب','عدد طلبات تم مراجعتها','عدد طلبات مقبولة','عدد طلبات مرفوضة','تاريخ الاضافة '];
                 foreach($users as $user){
                 $data[] = ['الاسم'           => $user->name,
                             'الهاتف'         => '0'.$user->phone,
-                            'الرصيد '        => $user->balance, 
+                             'البريد الالكتروني' => $user->email,
+                             'الرصيد '        => $user->balance, 
                             'قيمة مراجعة الطلب'       => $user->review_order_value, 
                             'عدد طلبات تم مراجعتها'   => $user->num_reviewed_orders, 
                             'عدد طلبات مقبولة'        => $user->num_review_accepted_orders, 

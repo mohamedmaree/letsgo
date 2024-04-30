@@ -700,8 +700,15 @@ class UsersController extends Controller{
         return Excel::download( new UsersExport('providers'), 'providers.xlsx');        
     }
 
-    public function blockedProviders(){
-      $users = User::with('Role')->where('role','=','0')->where('captain','=','true')->where('active','=','block')->latest()->get();
+    public function manualBlockedProviders(){
+      $users = User::with('Role')->where('role','=','0')->where('captain','=','true')->where('active','=','block')->where('block_type','=','manual')->latest()->get();
+      $roles = Role::latest()->get();
+      $countries = Country::orderBy('iso2','ASC')->get();
+      return view('dashboard.users.providers',compact('users','roles','countries'));
+    }
+
+    public function autoBlockedProviders(){
+      $users = User::with('Role')->where('role','=','0')->where('captain','=','true')->where('active','=','block')->where('block_type','=','auto')->latest()->get();
       $roles = Role::latest()->get();
       $countries = Country::orderBy('iso2','ASC')->get();
       return view('dashboard.users.providers',compact('users','roles','countries'));
@@ -968,11 +975,11 @@ public function reviewerRefusedUsersMeta($reviewer_id = null){
         if(Auth::user()->type == 'reviewer'){
           if(!$usermeta->reviewer_id){
             $usermeta->reviewer_id = Auth::user()->id;
-          }else{
+            $usermeta->update();
+          }elseif(isset($usermeta->reviewer_id) && $usermeta->reviewer_id != Auth::user()->id){
             return back()->with('danger','عذراً تم استلام الطلب من مراجع آخر'); 
           }
         }
-        $usermeta->update();
         $cartypes = carTypes::orderBy('id','ASC')->get();
         return view('dashboard.users.userMeta',compact('usermeta','cartypes'));
     }
@@ -1754,7 +1761,7 @@ public function reviewerRefusedUsersMeta($reviewer_id = null){
             'name'     =>'required|max:190',
             // 'email'    =>'required|email|unique:users',
             'phone'    =>'required|unique:users',//min:9|max:190|
-            'avatar'   =>'nullable|image',
+            'avatar'   =>'nullable',
             'password' =>'required',//|min:6|max:190
             'role'     => 'required'
         ]);
@@ -1822,7 +1829,7 @@ public function reviewerRefusedUsersMeta($reviewer_id = null){
             'edit_name'   =>'required|max:190',
             // 'edit_email' =>'required|email|min:2|max:190|unique:users,email,'.$request->id,
             'edit_phone'  => 'required|unique:users,phone,'.$request->id,
-            'edit_avatar' => 'nullable|image',
+            'edit_avatar' => 'nullable',
             'edit_role'   => 'required'
         ]);
         $number         = convert2english(request('edit_phone'));
@@ -2477,7 +2484,7 @@ public function reviewerRefusedUsersMeta($reviewer_id = null){
             'model'       => 'required',
             'year'        => 'required',
             'car_number'  => 'required',
-            'image'       => 'required|image'
+            'image'       => 'required'
         ]);
 
         $car = new userCars();

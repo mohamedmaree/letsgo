@@ -29,7 +29,7 @@ class ImageAppController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'image'             =>  'required|image',
+            'image'             =>  'required',
         ]);
 
 

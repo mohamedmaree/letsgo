@@ -20,7 +20,7 @@ class OffersController extends Controller{
         $this->validate($request,[
             'title'     => 'required',
             'end_at'    => 'required|date|after:'.date('Y-m-d'),
-            'image'     => 'required|image|mimes:jpeg,png,jpg,gif'
+            'image'     => 'required'
         ]);
 
         $offer = new Offers();        
@@ -84,7 +84,7 @@ class OffersController extends Controller{
         $this->validate($request,[
             'title'     => 'required',
             'end_at'    => 'required|date|after:'.date('Y-m-d'),
-            'image'     => 'required|image|mimes:jpeg,png,jpg,gif'
+            'image'     => 'required'
         ]);
 
         $offer = new Offers();        

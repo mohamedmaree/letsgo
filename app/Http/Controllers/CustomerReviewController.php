@@ -27,7 +27,7 @@ class CustomerReviewController extends Controller
             'name'             =>  'required|min:3',
             'comment'          =>  'required|min:3',
             'rate'             =>  'required',
-            'image'            =>  'required|image',
+            'image'            =>  'required',
         ],[],[
             'name'              =>  'الاسم',
             'comment'           =>  'التعليق',
@@ -63,7 +63,7 @@ class CustomerReviewController extends Controller
             'name'              =>  'required|min:3',
             'comment'           =>  'required|min:3',
             'rate'              =>  'required',
-            'image'             =>  'nullable|image',
+            'image'             =>  'nullable',
             'customerReview_id' =>  'required'
         ],[],[
             'name'              =>  'الاسم',

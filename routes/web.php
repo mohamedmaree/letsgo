@@ -270,11 +270,12 @@ Route::group(['prefix'=>'admin','middleware'=>['UserAuth','Admin','checkRole']],
         'subIcon' =>'<i class="glyphicon glyphicon-cog"></i>',		
 		'child'=>[
 		    'downloadAllUsers',
-		    'users',
+		    'clients',
 		    'downloadClients',
 		    'providers',
 		    'downloadProviders',
-		    'blockedProviders',
+		    'manualBlockedProviders',
+		    'autoBlockedProviders',
 			
 			'onlineProviders',
 			'offlineProviders',
@@ -353,9 +354,9 @@ Route::group(['prefix'=>'admin','middleware'=>['UserAuth','Admin','checkRole']],
 		'as'  =>'downloadAllUsers',
 		'title'=>'تحميل بيانات كل الأعضاء'
 	]);
-	Route::get('users',[
+	Route::get('clients',[
 		'uses' =>'UsersController@Users',
-		'as'   =>'users',
+		'as'   =>'clients',
 		'title'=>'العملاء',
 		'icon' =>'<i class="glyphicon glyphicon-user"></i>',
         'hasFather' => true
@@ -377,10 +378,18 @@ Route::group(['prefix'=>'admin','middleware'=>['UserAuth','Admin','checkRole']],
 		'as'  =>'downloadProviders',
 		'title'=>'تحميل بيانات القاده'
 	]);
-	Route::get('blockedProviders',[
-		'uses' =>'UsersController@blockedProviders',
-		'as'   =>'blockedProviders',
-		'title'=>'القادة المحظورين',
+	Route::get('manualBlockedProviders',[
+		'uses' =>'UsersController@manualBlockedProviders',
+		'as'   =>'manualBlockedProviders',
+		'title'=>'القادة المحظورين يدويا',
+		'icon' =>'<i class="fa fa-lock"></i>',
+        'hasFather' => true
+	]);
+
+	Route::get('autoBlockedProviders',[
+		'uses' =>'UsersController@autoBlockedProviders',
+		'as'   =>'autoBlockedProviders',
+		'title'=>'القادة المحظورين تلقائياً',
 		'icon' =>'<i class="fa fa-lock"></i>',
         'hasFather' => true
 	]);

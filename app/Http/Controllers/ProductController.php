@@ -29,7 +29,7 @@ class ProductController extends Controller{
             'price'            => 'required',
             // 'description_ar'   => 'required',
             // 'description_en'   => 'required',
-            'image'      => 'required|image|mimes:jpeg,png,jpg,gif',
+            'image'      => 'required',
         ]);
 
         $product = new Product();        
@@ -64,7 +64,7 @@ class ProductController extends Controller{
             'edit_price'             => 'required',
             // 'edit_description_ar'   => 'required',
             // 'edit_description_en'   => 'required',
-            // 'edit_image'      => 'required|image|mimes:jpeg,png,jpg,gif',
+            // 'edit_image'      => 'required',
         ]);
 
         $product = Product::findOrFail($request->id);

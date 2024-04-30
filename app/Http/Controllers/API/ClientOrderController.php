@@ -1328,7 +1328,7 @@ class ClientOrderController extends Controller{
                 return response()->json(failReturn($msg)); 
               }             
             $phone = '';$name='';$avatar='';$rate= '0';$car_brand='';$car_number='';$car_image='';
-            $captain_lat = ''; $captain_long = '';
+            $captain_lat = 0.0; $captain_long = 0.0;
             if($captain = $order->captain){
               $phone  = '0'.$captain->phone;
               $name   = $captain->name;
@@ -1387,10 +1387,10 @@ class ClientOrderController extends Controller{
                      'place_ref'      => ($order->place_ref)??'',
                      'place_name'     => ($order->place_name)??'',
                      'icon'           => url('img/icons/restaurant.png'),
-                     'captain_id'     => ($order->captain_id)??'',
+                     'captain_id'     => ($order->captain_id)??0,
                      'conversation_id'=> ($conversation_id)??0,
-                     'captain_lat'    => $captain_lat,
-                     'captain_long'   => $captain_long,
+                     'captain_lat'    => doubleval( $captain_lat ),
+                     'captain_long'   => doubleval( $captain_long ),
                      'car_type_id'    => ($order->car_type_id)? $order->car_type_id : 0,//(($order->car)? $order->car->car_type_id : 0),
                      'start_lat'      => "$order->start_lat",
                      'start_long'     => "$order->start_long",
@@ -1436,7 +1436,7 @@ class ClientOrderController extends Controller{
             $data = ['price'        => $order->required_price.' '.$order->{"currency_$lang"},
                      'payment_type' => $order->payment_type,
                      'avatar'       => $avatar,
-                     'captain_id'   => ($order->captain_id)??'',
+                     'captain_id'   => ($order->captain_id)??0,
                      'name'         => $name
                     ];
             return response()->json(successReturn($data));
@@ -1681,7 +1681,10 @@ class ClientOrderController extends Controller{
           $from_lat  = doubleval($request->from_lat);
           $from_long = doubleval($request->from_long);
           $to_lat    = doubleval($request->to_lat);
-          $to_long   = doubleval($request->to_long);         
+          $to_long   = doubleval($request->to_long);
+          $added_value = setting('added_value');
+          $wasl = setting('wasl_value');
+
           $expected  = [];
           if($request->to_lat){ 
             $expected  = GetDrivingDistance($from_lat,$from_long,$to_lat,$to_long,'en');
@@ -1698,13 +1701,15 @@ class ClientOrderController extends Controller{
               $pricedata      = $this->expectedPrice($cartype->id,$expected['distance'],$request->from_lat,$request->from_long,1);
               $price_id       = (isset($pricedata['price_id']))? $pricedata['price_id']:'' ;
               $expected_price = (isset($pricedata['price']) && ($request->to_lat != '') )? $pricedata['price']:'' ;
+              $vat   = ($expected_price > 0 )? round( floatval( ($expected_price * ( $added_value / 100 )) ),2) : '0';
+              $expected_price_after_vat = $expected_price + $vat + $wasl;
               $cars[] = [ 'id'             => $cartype->id,
                           'name'           => $cartype->{"name_$lang"},
                           'type'           => $cartype->type,
                           'max_weight'     => ($cartype->max_weight)??'',
                           'num_persons'    => intval( $cartype->num_persons ),
                           'image'          => ($cartype->image)? url('img/car/'.$cartype->image):url('img/car/default.png'),
-                          'expected_price' => ''.round($expected_price,2).'',
+                          'expected_price' => floor($expected_price).' - '.ceil($expected_price_after_vat),
                           'currency'       => ($user->currency)? $user->currency : setting('site_currency_'.$lang),
                           'price_id'       => $price_id
                         ];

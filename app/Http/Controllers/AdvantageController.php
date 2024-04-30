@@ -31,7 +31,7 @@ class AdvantageController extends Controller
         $this->validate($request, [
             'title'             =>  'required|min:3',
             'content'           =>  'required|min:3',
-            'image'             =>  'required|image',
+            'image'             =>  'required',
         ],[],[
             'title'             =>  'العنوان'
         ]);
@@ -62,7 +62,7 @@ class AdvantageController extends Controller
         $this->validate($request, [
             'title'             =>  'required|min:3',
             'content'           =>  'required|min:3',
-            'image'             =>  'nullable|image',
+            'image'             =>  'nullable',
             'advantage_id'      =>  'required'
         ],[],[
             'title'             =>  'العنوان'
