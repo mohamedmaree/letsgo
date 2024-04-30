@@ -15,9 +15,7 @@
         "nexmo/client": "^1.5",
         "nexmo/laravel": "^1.1",
         "twilio/sdk": "^5.23",
-        "tymon/jwt-auth": "dev-develop",
-        "vmdevelopment/laravel-tap-payments": "^1.0",
-        "wshurafa/laravel-payfort": "dev-master"
+        "tymon/jwt-auth": "dev-develop"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
